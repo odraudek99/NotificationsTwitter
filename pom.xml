@@ -5,6 +5,9 @@
 	<artifactId>notifications-twitter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<properties>
+		<main-class>mx.com.odraudek99.notificaciones.Application</main-class>
+	</properties>
 
 	<dependencies>
 
@@ -26,7 +29,38 @@
 			<version>1.4</version>
 		</dependency>
 
-
 	</dependencies>
+
+
+	<build>
+
+<finalName>notifications-twitter</finalName>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>attached</goal>
+						</goals>
+						<phase>package</phase>
+						<configuration>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<archive>
+								<manifest>
+									<mainClass>${main-class}</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
