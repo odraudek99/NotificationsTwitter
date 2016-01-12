@@ -19,13 +19,13 @@ import twitter4j.Status;
 @Component
 public class MailService {
 
-	@Value("${password}")
+	@Value("${mail.password}")
 	String password;
 
-	@Value("${correoSalida}")
+	@Value("${mail.correoSalida}")
 	String correoSalida;
 
-	@Value("${correoDestino}")
+	@Value("${mail.correoDestino}")
 	String correoDestino;
 
 	public int enviarMensaje(QueryResult result) {

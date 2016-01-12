@@ -19,20 +19,20 @@ import twitter4j.auth.AccessToken;
 public class TwitterInegration {
 
 
-	@Value("${consumerKey}")
+	@Value("${twitter.consumerKey}")
 	String consumerKey;
 	
-	@Value("${consumerSecret}")
+	@Value("${twitter.consumerSecret}")
 	String consumerSecret;
 	
 	
-	@Value("${token}")
+	@Value("${twitter.token}")
 	String token;
 	
-	@Value("${tokenSecret}")
+	@Value("${twitter.tokenSecret}")
 	String tokenSecret;
 	
-	@Value("${useId}")
+	@Value("${twitter.useId}")
 	long useId;
 	
 	@Autowired
