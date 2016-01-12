@@ -15,7 +15,7 @@ import twitter4j.TwitterException;
 
 @Configuration
 @ComponentScan
-@PropertySource({ "classpath:/twitter.properties","file:/home/odraudek99/twittercta.properties" })
+@PropertySource({ "classpath:/twitter.properties", "file:/home/odraudek99/twittercta.properties" })
 public class Application {
 
 	@Bean
@@ -23,18 +23,12 @@ public class Application {
 		return new PropertySourcesPlaceholderConfigurer();
 	}
 
-
 	@Autowired
 	TwitterInegration twitterInegration;
-	
+
 	public static void main(String[] args) throws IOException, TwitterException {
 		ApplicationContext context = new AnnotationConfigApplicationContext(Application.class);
 
-		TwitterInegration twitterInegration = context.getBean(TwitterInegration.class);
-		twitterInegration.init();
-		
 	}
-
-
 
 }
