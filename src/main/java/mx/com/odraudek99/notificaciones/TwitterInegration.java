@@ -88,7 +88,7 @@ public class TwitterInegration {
 		    for (Status status : result.getTweets()) {
 		        System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText()+ " |"+status.getCreatedAt());
 		    }
-		    
+		    twitter.invalidateOAuth2Token();
 		    mailService.enviarMensaje(result);
 		    
 		    
